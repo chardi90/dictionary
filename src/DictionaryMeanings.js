@@ -8,12 +8,6 @@ export default function Meanings({ partOfSpeech, meanings }) {
 
   return (
     <div className="Meaning">
-      {synonyms && (
-        <p>
-          <strong>Synonyms:</strong> {synonyms}
-        </p>
-      )}
-
       <h3>{partOfSpeech}</h3>
       <ol>
         {meanings.map((entry, i) =>
@@ -31,6 +25,7 @@ export default function Meanings({ partOfSpeech, meanings }) {
           ))
         )}
       </ol>
+      {synonyms && <p>Synonyms: {synonyms}</p>}
     </div>
   );
 }
