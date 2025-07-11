@@ -1,0 +1,20 @@
+:root {
+  --main-colour: #1d93f3;
+  --greyed-colour: #434d65;
+  --dark-text-colour: #000000;
+}
+
+body {
+  color: var(--greyed-colour);
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1 {
+  color: var(--dark-text-colour);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
