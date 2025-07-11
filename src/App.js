@@ -6,6 +6,7 @@ export default function App() {
       <header className="App-header">
         <form className="search-form">
           <input type="search"></input>
+          <input type="submit"></input>
         </form>
       </header>
       <main>
