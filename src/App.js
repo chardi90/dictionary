@@ -1,19 +1,21 @@
 import "./App.css";
+import SearchForm from "./SearchForm.js";
 
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <form className="search-form">
-          <input type="search"></input>
-          <input type="submit"></input>
-        </form>
-      </header>
-      <main>
-        <h1 className="text-center">Dictionary</h1>
-        <h2 className="text-center">Knowledge at your fintertips!</h2>
-      </main>
-      <footer></footer>
+      <div className="container">
+        <header className="App-header">
+          <SearchForm />
+        </header>
+        <main>
+          <h1 className="text-center">Dictionary</h1>
+          <h2 className="text-center">Knowledge at your fintertips!</h2>
+        </main>
+        <footer>
+          Coded by <a href="/">Chardi</a>.
+        </footer>
+      </div>
     </div>
   );
 }
