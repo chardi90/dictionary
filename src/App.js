@@ -13,7 +13,15 @@ export default function App() {
           <h2 className="text-center">Knowledge at your fintertips!</h2>
         </main>
         <footer>
-          Coded by <a href="/">Chardi</a>.
+          Coded by{" "}
+          <a
+            href="https://chardi-portfolio.netlify.app/"
+            alt="Chardi Porfolio"
+            rel="noreferrer"
+          >
+            Chardi
+          </a>
+          .
         </footer>
       </div>
     </div>
