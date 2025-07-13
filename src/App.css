@@ -1,15 +1,85 @@
 header {
   background-color: var(--main-colour);
-  padding: 10px;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding: 10px 40px;
+}
+
+h5 {
+  border-bottom: 1px solid var(--grey-background);
+  display: inline-block;
+  font-size: 18px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+p strong {
+  color: var(--main-colour);
+  font-weight: bold;
 }
 
 footer {
+  color: var(--grey-background);
+  background-color: var(--main-colour);
+  margin-left: -12px;
+  margin-right: -12px;
+  padding: 10px 40px;
   text-align: center;
-  margin: 30px 0;
+}
+
+footer a {
+  color: var(--greyed-colour);
+  text-decoration: none;
+  text-transform: 200ms all ease-in-out;
+}
+
+footer a:hover {
+  color: var(--grey-background);
+  text-decoration: underline;
 }
 
 .App-header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Dictionary-title {
+  border-bottom: 1px solid var(--greyed-colour);
+  padding: 80px 40px;
+}
+
+.word-of-day {
+  padding: 40px 20px;
+}
+
+.word-of-day .day-wrapper {
+  background-color: var(--main-colour);
+  border-radius: 15px;
+  color: var(--grey-background);
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.word-of-day .word-wrapper {
+  background-color: var(--grey-background);
+  color: var(--greyed-colour);
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 20px 20px;
+  text-align: left;
+}
+
+.word-of-day h2 {
+  font-size: 22px;
 }

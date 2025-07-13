@@ -6,6 +6,7 @@
 }
 
 body {
+  background-color: var(--grey-background);
   color: var(--greyed-colour);
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -17,5 +18,11 @@ h1 {
   color: var(--dark-text-colour);
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
+  font-size: 48px;
   font-style: normal;
+  font-weight: 700;
+}
+
+.container {
+  background-color: #fff;
 }
