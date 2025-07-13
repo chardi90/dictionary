@@ -21,12 +21,16 @@ export default function SearchForm(props) {
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="search"
-        onChange={handleKeywordChange}
-        value={keyword}
-        autoFocus={true}
-      />
+      <div className="search-wrapper">
+        <span className="material-symbols-outlined search-icon">search</span>
+        <input
+          type="search"
+          placeholder="Search..."
+          onChange={handleKeywordChange}
+          value={keyword}
+          autoFocus
+        />
+      </div>
       <input type="submit" value="Search" />
     </form>
   );

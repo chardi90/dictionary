@@ -41,7 +41,7 @@ export default function Phonetics({ keyword }) {
           {phonetic.text}{" "}
           {phonetic.audio && (
             <a href={phonetic.audio} target="_blank" rel="noreferrer">
-              🔊
+              <span class="material-symbols-outlined">volume_up</span>
             </a>
           )}
         </p>
