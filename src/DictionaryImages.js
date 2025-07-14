@@ -1,4 +1,5 @@
 import React from "react";
+import "./DictionaryImages.css";
 
 export default function DictionaryImages({ images }) {
   if (!images || !images.photos || images.photos.length === 0) return null;
