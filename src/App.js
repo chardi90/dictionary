@@ -46,6 +46,7 @@ export default function App() {
           <a
             href="https://chardi-portfolio.netlify.app/"
             alt="Chardi Portfolio"
+            target="_blank"
             rel="noreferrer"
           >
             Chardi

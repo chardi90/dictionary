@@ -11,9 +11,16 @@ h3 {
   padding: 10px 15px;
 }
 
+.Meaning ol {
+  list-style-position: outside;
+  padding-left: 2em;
+  margin-left: 0;
+}
+
 .Meaning ol li {
-  position: relative;
-  padding-left: 1em;
+  margin-bottom: 10px;
+  text-indent: -1.5em;
+  padding-left: 1.5em;
 }
 
 .Meaning ol li::marker {
@@ -22,25 +29,30 @@ h3 {
 
 .Meaning strong {
   color: var(--main-colour);
+  display: inline;
 }
 
 .Meaning .example-text {
   color: var(--greyed-colour);
   list-style: none;
-  margin: 5px 0;
-  padding-left: 0;
+  list-style-position: outside;
+  margin-left: -3em;
 }
 
 .Meaning .example-text li {
-  list-style: none;
-  position: relative;
-  padding-left: 1em;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  text-indent: -1.5em;
+  padding-left: 1.5em;
 }
 
 .Meaning .example-text li::before {
+  color: var(--greyed-colour);
   content: "~";
-  position: absolute;
-  left: 0;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 0.3em;
+  width: 1.2em;
 }
 
 .Meaning .synonyms {

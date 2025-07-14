@@ -9,7 +9,14 @@ export default function DictionaryImages({ images }) {
       <h3>photos</h3>
       <div className="images-grid">
         {images.photos.map((photo, index) => (
-          <img key={index} src={photo.src.landscape} alt={photo.alt} />
+          <a href={photo.url} target="_blank" rel="noreferrer">
+            <img
+              key={index}
+              src={photo.src.landscape}
+              alt={photo.alt}
+              className="img-fluid"
+            />
+          </a>
         ))}
       </div>
     </div>
