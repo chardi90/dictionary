@@ -8,10 +8,16 @@ export default function SearchForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    let apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
+    const apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
+
     let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(apiUrl).then(function (response) {
-      props.onResults(response.data);
+      props.onResults({ dictionary: response.data });
+    });
+
+    let photosApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
+    axios.get(photosApiUrl).then(function (response) {
+      props.onResults({ photos: response.data });
     });
   }
 

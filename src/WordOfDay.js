@@ -43,23 +43,46 @@ export default function WordOfTheDay() {
   const [wordData, setWordData] = useState(null);
 
   useEffect(() => {
+    const fallbackWord = "discombobulate";
+
+    const fetchWordData = (word) => {
+      const apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
+      const apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`;
+
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          const data = response.data;
+          if (Array.isArray(data.meanings) && data.meanings.length > 0) {
+            setWordData(data);
+          } else if (word !== fallbackWord) {
+            fetchWordData(fallbackWord);
+          } else {
+            console.warn("Fallback word also failed:", data);
+          }
+        })
+        .catch((error) => {
+          if (word !== fallbackWord) {
+            fetchWordData(fallbackWord);
+          } else {
+            console.error("Both primary and fallback word failed:", error);
+          }
+        });
+    };
+
     const randomWord =
       RANDOM_WORDS[Math.floor(Math.random() * RANDOM_WORDS.length)];
 
-    const apiKey = "a2t477eebb3f98daaa0d6cf85ob51907";
-    const apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${randomWord}&key=${apiKey}`;
-
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        setWordData(response.data);
-      })
-      .catch((error) => {
-        console.error("Word of the Day fetch failed:", error);
-      });
+    fetchWordData(randomWord);
   }, []);
 
-  if (!wordData) return null;
+  if (
+    !wordData ||
+    !Array.isArray(wordData.meanings) ||
+    wordData.meanings.length === 0
+  ) {
+    return null;
+  }
 
   const date = new Date().toLocaleDateString("en-GB", {
     day: "2-digit",
@@ -84,10 +107,10 @@ export default function WordOfTheDay() {
         </p>
         <div className="word-wrapper">
           <h2>Meaning</h2>
-          <p>
+          <div>
             <strong>{definition}</strong>
             <div>{example && ` ~ ${example}`}</div>
-          </p>
+          </div>
         </div>
       </div>
     </div>

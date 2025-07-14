@@ -5,10 +5,16 @@ import SearchForm from "./SearchForm.js";
 import Dictionary from "./DictionaryResults.js";
 
 export default function App() {
-  const [results, setResults] = useState(null);
+  const [dictionaryResults, setDictionaryResults] = useState(null);
+  const [photoResults, setPhotoResults] = useState(null);
 
   function handleResults(data) {
-    setResults(data);
+    if (data.dictionary) {
+      setDictionaryResults(data.dictionary);
+    }
+    if (data.photos) {
+      setPhotoResults(data.photos);
+    }
   }
 
   return (
@@ -19,7 +25,7 @@ export default function App() {
         </header>
 
         <main>
-          {!results && (
+          {!dictionaryResults && (
             <>
               <div>
                 <div className="Dictionary-title">
@@ -30,7 +36,9 @@ export default function App() {
               </div>
             </>
           )}
-          <Dictionary results={results} />
+          {dictionaryResults && (
+            <Dictionary results={dictionaryResults} photos={photoResults} />
+          )}
         </main>
 
         <footer>
