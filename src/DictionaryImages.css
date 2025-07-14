@@ -1,5 +1,5 @@
 .photo-gallery {
-  padding: 10px 15px 20px;
+  padding: 10px 15px 50px;
 }
 
 .images-grid {
@@ -10,4 +10,16 @@
 
 .images-grid img {
   width: 100%;
+  transition: 200ms all ease-in-out;
+}
+
+.images-grid img:hover {
+  filter: grayscale(50%) brightness(50%);
+}
+
+@media (min-width: 900px) {
+  .photo-gallery {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }

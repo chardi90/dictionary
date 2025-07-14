@@ -42,16 +42,31 @@ export default function App() {
         </main>
 
         <footer>
-          Coded by{" "}
-          <a
-            href="https://chardi-portfolio.netlify.app/"
-            alt="Chardi Portfolio"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Chardi
-          </a>
-          .
+          <div className="row">
+            <div className="col-5 d-e">
+              Coded by{" "}
+              <a
+                href="https://chardi-portfolio.netlify.app/"
+                alt="Chardi Portfolio"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Chardi
+              </a>{" "}
+            </div>
+            <div className="col-2">|</div>
+            <div className="col-5 d-s">
+              <a
+                href="https://github.com/chardi90/dictionary"
+                alt="Chardi GitHub Code"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>{" "}
+              open-sourced{" "}
+            </div>
+          </div>
         </footer>
       </div>
     </div>

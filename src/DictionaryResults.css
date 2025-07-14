@@ -5,6 +5,11 @@ h3 {
   font-size: 16px;
   font-style: normal;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.Dictionary h2 {
+  margin-top: 30px;
 }
 
 .Meaning {
@@ -35,15 +40,10 @@ h3 {
 .Meaning .example-text {
   color: var(--greyed-colour);
   list-style: none;
-  list-style-position: outside;
-  margin-left: -3em;
 }
 
 .Meaning .example-text li {
-  margin-top: 4px;
-  margin-bottom: 10px;
-  text-indent: -1.5em;
-  padding-left: 1.5em;
+  margin: 4px 0 10px;
 }
 
 .Meaning .example-text li::before {
@@ -66,4 +66,26 @@ h3 {
 
 .part-of-speech {
   padding: 10px 40px;
+}
+
+@media (min-width: 900px) {
+  .Meaning {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .Meaning .example-text li::before {
+    color: var(--greyed-colour);
+    content: "~";
+    display: inline-block;
+    flex-shrink: 0;
+    margin-right: 0em;
+    width: 0em;
+  }
+
+  .Meaning .example-text li {
+    padding: 0;
+  }
 }

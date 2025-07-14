@@ -23,7 +23,7 @@ h6 {
   line-height: 1.5;
 }
 
-p strong {
+div strong {
   color: var(--main-colour);
   font-weight: bold;
 }
@@ -57,6 +57,7 @@ footer a:hover {
 .Dictionary-title {
   border-bottom: 1px solid var(--greyed-colour);
   padding: 80px 40px;
+  margin: 0 -12px;
 }
 
 .word-of-day {
@@ -90,4 +91,22 @@ footer a:hover {
 .Phonetic .material-symbols-outlined {
   position: relative;
   top: 6px;
+}
+
+@media (min-width: 900px) {
+  .word-of-day .day-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  footer .row {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  h6 {
+    font-size: 33px;
+  }
 }
