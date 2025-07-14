@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Phonetics({ keyword }) {
-  const [phonetics, setPhonetics] = useState([]);
+  const [phonetic, setPhonetic] = useState(null);
 
   useEffect(() => {
     if (!keyword) return;
@@ -13,39 +13,39 @@ export default function Phonetics({ keyword }) {
       .get(apiUrl)
       .then((response) => {
         if (!Array.isArray(response.data) || response.data.length === 0) {
-          setPhonetics([]);
+          setPhonetic(null);
           return;
         }
 
         const entry = response.data[0];
+        const phonetics = entry.phonetics || [];
+        const firstText = phonetics.find((p) => p.text);
+        const firstAudio = phonetics.find((p) => p.audio);
+        const combined = {
+          text: firstText?.text || "",
+          audio: firstAudio?.audio || "",
+        };
 
-        if (entry.phonetics && entry.phonetics.length > 0) {
-          const validPhonetics = entry.phonetics.filter(
-            (p) => p.text || p.audio
-          );
-          setPhonetics(validPhonetics);
-        } else {
-          setPhonetics([]);
-        }
+        setPhonetic(combined);
       })
       .catch((error) => {
         console.warn("Could not fetch phonetics:", error.message);
-        setPhonetics([]);
+        setPhonetic(null);
       });
   }, [keyword]);
 
   return (
     <div className="Phonetic">
-      {phonetics.map((phonetic, index) => (
-        <p key={index}>
+      {phonetic && (
+        <p>
           {phonetic.text}{" "}
           {phonetic.audio && (
             <a href={phonetic.audio} target="_blank" rel="noreferrer">
-              <span class="material-symbols-outlined">volume_up</span>
+              <span className="material-symbols-outlined">volume_up</span>
             </a>
           )}
         </p>
-      ))}
+      )}
     </div>
   );
 }

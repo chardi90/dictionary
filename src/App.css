@@ -82,3 +82,12 @@ footer a:hover {
 .word-of-day h2 {
   font-size: 22px;
 }
+
+.capitalize-first-letter::first-letter {
+  text-transform: uppercase;
+}
+
+.Phonetic .material-symbols-outlined {
+  position: relative;
+  top: 6px;
+}

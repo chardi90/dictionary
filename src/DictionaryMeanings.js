@@ -13,9 +13,10 @@ export default function Meanings({ partOfSpeech, meanings }) {
         {meanings.map((entry, i) =>
           entry.definitions?.map((def, j) => (
             <li key={`${i}-${j}`}>
-              {def.definition}
+              <strong>{def.definition}</strong>
+
               {def.example && (
-                <ul>
+                <ul className="example-text">
                   <li>
                     <em>{def.example}</em>
                   </li>
@@ -25,7 +26,11 @@ export default function Meanings({ partOfSpeech, meanings }) {
           ))
         )}
       </ol>
-      {synonyms && <p>Synonyms: {synonyms}</p>}
+      {synonyms && (
+        <p>
+          Synonyms: <span className="synonyms">{synonyms}</span>
+        </p>
+      )}
     </div>
   );
 }

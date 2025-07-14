@@ -1,4 +1,5 @@
 import React from "react";
+import "./DictionaryResults.css";
 import Meanings from "./DictionaryMeanings";
 import Phonetics from "./DictionaryPhonetics";
 
@@ -31,10 +32,14 @@ export default function Dictionary(props) {
 
   return (
     <div className="Dictionary">
-      <h1 className="text-center">{props.results.word}</h1>
-      <h2 className="text-center">{partsOfSpeechList}</h2>
-      <div className="text-center">
-        <Phonetics keyword={props.results.word} />
+      <div className="word-heading">
+        <h1 className="text-center">{props.results.word}</h1>
+      </div>
+      <div className="part-of-speech">
+        <h2 className="text-center text-capitalize">{partsOfSpeechList}</h2>
+        <div className="text-center">
+          <Phonetics keyword={props.results.word} />
+        </div>
       </div>
       {Object.keys(groupedMeanings).map((part, index) => (
         <div key={index}>
