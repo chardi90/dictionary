@@ -1,4 +1,4 @@
-# TaskTracker  
+# Dictionary App
 A minimal dictionary app with a search function and a word of the day splash page, built in ReactJS using two dictionary APIs. 
 
 ## Features  
