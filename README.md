@@ -13,7 +13,7 @@ Clone the repository and install the required packages:
 
 ```bash  
 git clone https://github.com/chardi90/dictionary.git  
-cd tasktracker  
+cd dicitonary  
 pip install -r requirements.txt 
 ``` 
 
